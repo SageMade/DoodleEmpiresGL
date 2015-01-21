@@ -1,0 +1,30 @@
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Arial12.xnb
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\DoodleEmpires.exe
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\DoodleEmpires.pdb
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\obj\x86\Debug\DoodleEmpires.exe
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\obj\x86\Debug\DoodleEmpires.pdb
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.pdb
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.xml
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\obj\x86\Debug\DoodleEmpires.csprojResolveAssemblyReference.cache
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Sample.frag
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Sample.vert
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Basic.frag
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Basic.vert
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Textured.frag
+C:\Users\Shawn\Documents\Visual Studio 2013\Projects\DoodleEmpires\DoodleEmpires\bin\WindowsGL\Debug\Content\Textured.vert
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\obj\x86\Debug\DoodleEmpires.exe
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\obj\x86\Debug\DoodleEmpires.pdb
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Textured.frag
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Arial12.xnb
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Sample.frag
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Basic.frag
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Sample.vert
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Basic.vert
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\Content\Textured.vert
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\DoodleEmpires.exe
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\DoodleEmpires.pdb
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.pdb
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\bin\WindowsGL\Debug\OpenTK.xml
+C:\Users\Shawn\Documents\GitHub\DoodleEmpiresGL\DoodleEmpires\obj\x86\Debug\DoodleEmpires.csprojResolveAssemblyReference.cache

@@ -20,6 +20,8 @@ namespace DoodleEmpires.Game
         ShaderProgram textureShader;
         TextRenderer textRenderer;
 
+        RenderTarget renderTarget;
+
         int samples = 15;
         Vector2 start;
         Vector2 end;
@@ -125,6 +127,8 @@ namespace DoodleEmpires.Game
         /// </summary>
         protected override void LoadContent()
         {
+            renderTarget = new RenderTarget(200, 200, RenderTargetFlags.Color);
+
             vBuffer = Graphics.CreateVertexBuffer();
             iBuffer = Graphics.CreateIndexBuffer();
 
@@ -183,9 +187,10 @@ namespace DoodleEmpires.Game
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(double elapsedTime)
         {
-            Graphics.Clear(Color4.CornflowerBlue);
-
             currentShader.Apply();
+
+            renderTarget.Bind();
+            Graphics.Clear(Color4.Black);
 
             Graphics.SetMatrix(Matrix4.CreateScale(0.5f, 0.5f * (Window.Width / (float)Window.Height), 1.0f));
             Graphics.SetLineWidth(3.0f);
@@ -218,6 +223,10 @@ namespace DoodleEmpires.Game
 
             Graphics.End();
 
+            RenderTarget.Unbind();
+
+            Graphics.Clear(Color4.CornflowerBlue);
+
             textureShader.Apply();
 
             OpenTK.Graphics.OpenGL.GL.LoadIdentity();
@@ -227,17 +236,19 @@ namespace DoodleEmpires.Game
 
             OpenTK.Graphics.OpenGL.GL.BindTexture(OpenTK.Graphics.OpenGL.TextureTarget.Texture2D, textRenderer.TextureID);
 
+            renderTarget.Color.Bind();
+
             OpenTK.Graphics.OpenGL.GL.Enable(OpenTK.Graphics.OpenGL.EnableCap.Texture2D);
             OpenTK.Graphics.OpenGL.GL.Enable(OpenTK.Graphics.OpenGL.EnableCap.Blend);
             OpenTK.Graphics.OpenGL.GL.BlendFunc(OpenTK.Graphics.OpenGL.BlendingFactorSrc.One, OpenTK.Graphics.OpenGL.BlendingFactorDest.OneMinusSrcAlpha);
 
             OpenTK.Graphics.OpenGL.GL.Begin(OpenTK.Graphics.OpenGL.PrimitiveType.Quads);
             OpenTK.Graphics.OpenGL.GL.TexCoord2(0, 1);
-            OpenTK.Graphics.OpenGL.GL.Vertex2(0, textRenderer.Height);
+            OpenTK.Graphics.OpenGL.GL.Vertex2(0, 200);
             OpenTK.Graphics.OpenGL.GL.TexCoord2(1, 1);
-            OpenTK.Graphics.OpenGL.GL.Vertex2(textRenderer.Width, textRenderer.Height);
+            OpenTK.Graphics.OpenGL.GL.Vertex2(200, 200);
             OpenTK.Graphics.OpenGL.GL.TexCoord2(1, 0);
-            OpenTK.Graphics.OpenGL.GL.Vertex2(textRenderer.Width, 0);
+            OpenTK.Graphics.OpenGL.GL.Vertex2(200, 0);
             OpenTK.Graphics.OpenGL.GL.TexCoord2(0, 0);
             OpenTK.Graphics.OpenGL.GL.Vertex2(0, 0);
             OpenTK.Graphics.OpenGL.GL.End();

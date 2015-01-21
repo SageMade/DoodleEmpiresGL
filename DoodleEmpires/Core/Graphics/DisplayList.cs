@@ -6,14 +6,11 @@ using System.Text;
 
 namespace DoodleEmpires.Core.Graphics
 {
-    public class DisplayList : IDisposable
+    public class DisplayList : OpenGLObject
     {
-        private int m_glID;
-
         public DisplayList(int glID)
         {
-            // TODO: Complete member initialization
-            m_glID = glID;
+            GlID = glID;
         }
 
         /// <summary>
@@ -21,7 +18,7 @@ namespace DoodleEmpires.Core.Graphics
         /// </summary>
         internal void Begin()
         {
-            GL.NewList(m_glID, ListMode.Compile);
+            GL.NewList(GlID, ListMode.Compile);
         }
 
         /// <summary>
@@ -37,12 +34,12 @@ namespace DoodleEmpires.Core.Graphics
         /// </summary>
         public void Excecute()
         {
-            GL.CallList(m_glID);
+            GL.CallList(GlID);
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
-            GL.DeleteLists(m_glID, 1);
+            GL.DeleteLists(GlID, 1);
         }
     }
 }

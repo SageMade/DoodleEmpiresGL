@@ -42,6 +42,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="Core\Graphics\DisplayList.cs" />
+    <Compile Include="Core\Graphics\FramebufferCompletionException.cs" />
+    <Compile Include="Core\Graphics\OpenGLObject.cs" />
+    <Compile Include="Core\Graphics\RenderTarget.cs" />
     <Compile Include="Core\Graphics\ShaderResource.cs" />
     <Compile Include="Core\Graphics\Shaders\ComputeShader.cs" />
     <Compile Include="Core\Graphics\Shaders\FragmentShader.cs" />
@@ -58,9 +61,10 @@
     <Compile Include="Core\Graphics\Shaders\ShaderProgram.cs" />
     <Compile Include="Core\Graphics\OpenTKUtils.cs" />
     <Compile Include="Core\Graphics\TextRenderer.cs" />
+    <Compile Include="Core\Graphics\Texture2D.cs" />
     <Compile Include="Core\Graphics\VertexApplicator.cs" />
     <Compile Include="Core\Graphics\Shaders\VertexBuffer.cs" />
-    <Compile Include="Core\Graphics\VertexShader.cs" />
+    <Compile Include="Core\Graphics\Shaders\VertexShader.cs" />
     <Compile Include="Core\Utils\Logger.cs" />
     <Compile Include="Core\Utils\Rectangle.cs" />
     <Compile Include="Game\MainGame.cs" />
@@ -78,7 +82,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Help.html" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -6,9 +6,8 @@ using System.Text;
 
 namespace DoodleEmpires.Core.Graphics
 {
-    public class IndexBuffer : IDisposable
+    public class IndexBuffer : OpenGLObject
     {
-        int m_glId;
         BufferUsageHint m_usage;
 
         public int Size { get; private set; }
@@ -41,7 +40,7 @@ namespace DoodleEmpires.Core.Graphics
             return buffer.m_glId;
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
             GL.DeleteBuffer(m_glId);
         }

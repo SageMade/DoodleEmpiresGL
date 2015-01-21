@@ -21,9 +21,9 @@ namespace DoodleEmpires.Core.Graphics
             int[] resourceValues = new int[PROPERTIES.Length];
 
             int crap = 0;
-            GL.GetProgramResource(program.GlId, ProgramInterface.Uniform, index, PROPERTIES.Length, PROPERTIES, PROPERTIES.Length, out crap, resourceValues);
+            GL.GetProgramResource(program.GlID, ProgramInterface.Uniform, index, PROPERTIES.Length, PROPERTIES, PROPERTIES.Length, out crap, resourceValues);
             StringBuilder name = new StringBuilder();
-            GL.GetProgramResourceName(program.GlId, ProgramInterface.Uniform, resourceValues[3], resourceValues[2], out crap, name);
+            GL.GetProgramResourceName(program.GlID, ProgramInterface.Uniform, resourceValues[3], resourceValues[2], out crap, name);
 
             Name = name.ToString();
         }

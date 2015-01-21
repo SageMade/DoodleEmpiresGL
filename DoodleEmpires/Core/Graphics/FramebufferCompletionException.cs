@@ -5,10 +5,12 @@ using System.Text;
 
 namespace DoodleEmpires.Core.Graphics
 {
-    public class OpenTKException : Exception
+    class FramebufferCompletionException : Exception
     {
-        public OpenTKException(string message) : base(message)
+
+        public FramebufferCompletionException(string message) : base(message)
         {
+
         }
     }
 }

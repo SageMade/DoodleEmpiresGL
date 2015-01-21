@@ -16,7 +16,7 @@ namespace DoodleEmpires.Core.Graphics
             if (eCode != ErrorCode.NoError)
             {
                 if (ThrowError)
-                    throw new OpenTKError("OpenGL threw error: " + eCode);
+                    throw new OpenTKException("OpenGL threw error: " + eCode);
                 else
                 {
                     Logger.LogMessage("OpenGL threw error: " + eCode);

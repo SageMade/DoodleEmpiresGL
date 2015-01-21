@@ -10,18 +10,10 @@ namespace DoodleEmpires.Core.Graphics
     /// <summary>
     /// The base class for all shader parts
     /// </summary>
-    public abstract class ShaderPart
+    public abstract class ShaderPart : OpenGLObject
     {
-        int m_glID;
         ShaderType m_shaderType;
 
-        /// <summary>
-        /// Gets the GL index for this shader part
-        /// </summary>
-        public int GlID
-        {
-            get { return m_glID; }
-        }
         /// <summary>
         /// Gets this shader part's shader type
         /// </summary>
@@ -37,17 +29,17 @@ namespace DoodleEmpires.Core.Graphics
         /// <param name="shaderType">The type of shader to create</param>
         public ShaderPart(string source, ShaderType shaderType)
         {
-            m_glID = GL.CreateShader(shaderType);
+            m_glId = GL.CreateShader(shaderType);
             m_shaderType = shaderType;
 
-            GL.ShaderSource(m_glID, source);
-            GL.CompileShader(m_glID);
+            GL.ShaderSource(m_glId, source);
+            GL.CompileShader(m_glId);
 
             int wasSucess;
-            GL.GetShader(m_glID, ShaderParameter.CompileStatus, out wasSucess);
+            GL.GetShader(m_glId, ShaderParameter.CompileStatus, out wasSucess);
 
             string message;
-            GL.GetShaderInfoLog(m_glID, out message);
+            GL.GetShaderInfoLog(m_glId, out message);
             Logger.LogMessage(message);
 
             if (wasSucess == 0)
@@ -66,6 +58,11 @@ namespace DoodleEmpires.Core.Graphics
         public void AddToProgram(ShaderProgram program)
         {
             program.AttachShader(this);
+        }
+
+        public override void Dispose()
+        {
+            GL.DeleteShader(m_glId);
         }
     }
 }

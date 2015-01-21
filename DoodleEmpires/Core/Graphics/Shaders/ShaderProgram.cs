@@ -12,7 +12,7 @@ namespace DoodleEmpires.Core.Graphics
     /// Represents a shader program
     /// </summary>
     /// <see cref="https://www.opengl.org/wiki/GLSL_Object"/>
-    public class ShaderProgram : IDisposable
+    public class ShaderProgram : OpenGLObject
     {
         VertexShader m_vShader;
         FragmentShader m_fShader;
@@ -24,15 +24,6 @@ namespace DoodleEmpires.Core.Graphics
 
         ShaderResource[] m_resources;
 
-        int m_glId;
-
-        /// <summary>
-        /// Get the OpenGL ID for this shader program
-        /// </summary>
-        public int GlId 
-        { 
-            get { return m_glId; } 
-        }
         /// <summary>
         /// Gets whether this shader program has been linked or not
         /// </summary>
@@ -82,7 +73,7 @@ namespace DoodleEmpires.Core.Graphics
                     throw new ArgumentException("Cannot bind shader type " + part.ShaderType);
             }
 
-            GL.AttachShader(GlId, part.GlID);
+            GL.AttachShader(GlID, part.GlID);
 
             OpenTKUtils.CheckError();
         }
@@ -120,7 +111,7 @@ namespace DoodleEmpires.Core.Graphics
 
                     if (!GL.IsProgram(m_glId))
                     {
-                        throw new OpenTKError("Program is no longer an OpenGL program!");
+                        throw new OpenTKException("Program is no longer an OpenGL program!");
                     }
                     else
                         Logger.LogMessage(GL.GetProgramInfoLog(m_glId));
@@ -186,7 +177,7 @@ namespace DoodleEmpires.Core.Graphics
             if (IsLinked)
             {
                 if (!GL.IsProgram(m_glId))
-                    throw new OpenTKError("Program is no longer an OpenGL program!");
+                    throw new OpenTKException("Program is no longer an OpenGL program!");
 
                 GL.UseProgram(m_glId);
 
@@ -204,7 +195,7 @@ namespace DoodleEmpires.Core.Graphics
         {
             if (part != null)
             {
-                GL.DetachShader(GlId, part.GlID);
+                GL.DetachShader(GlID, part.GlID);
                 GL.DeleteShader(part.GlID);
                 part = null;
             }
@@ -213,13 +204,13 @@ namespace DoodleEmpires.Core.Graphics
         /// <summary>
         /// Disposes this shader and releases all of it's unmanaged resources 
         /// </summary>
-        public void Dispose()
+        public override void Dispose()
         {
             if (IsLinked)
             {
                 UnattachAndDestroy();
 
-                GL.DeleteProgram(GlId);
+                GL.DeleteProgram(GlID);
             }
             else
             {
